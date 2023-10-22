@@ -1,0 +1,16 @@
+version: '3'
+services:
+  ecoandrich_db:
+    image: mysql:8.0
+    container_name: ecoandrich_db
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: ecoandrich
+      TZ: Asia/Seoul
+    volumes:
+      - ./db/mysql/data:/var/lib/mysql
+      - ./db/mysql/init:/docker-entrypoint-initdb.d
+#      - ./db/mysql/init/hr-schema-mysql.sql:/docker-entrypoint-initdb.d/init.sql
+    platform: linux/x86_64
