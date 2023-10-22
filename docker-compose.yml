@@ -9,8 +9,4 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: ecoandrich
       TZ: Asia/Seoul
-    volumes:
-      - ./db/mysql/data:/var/lib/mysql
-      - ./db/mysql/init:/docker-entrypoint-initdb.d
-#      - ./db/mysql/init/hr-schema-mysql.sql:/docker-entrypoint-initdb.d/init.sql
     platform: linux/x86_64
